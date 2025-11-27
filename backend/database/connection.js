@@ -23,4 +23,13 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+//importing database models
+db.books = require('./models/book.model')(sequelize, DataTypes)
+db.users = require('./models/user.model')(sequelize, DataTypes)
+
+//migrate the models with database
+sequelize.sync({alter:false}).then(() => {
+  console.log("database and tables synced !!!")
+})
+
 module.exports = db;
