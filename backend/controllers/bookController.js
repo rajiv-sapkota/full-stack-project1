@@ -107,11 +107,11 @@ exports.deleteBook = async (req, res) => {
 //not working as expected
 exports.getBookByName = async (req, res) => {
     try {
-      const { bookName } = req.params;
+      const { bookName } = req.body;
       const book = await db.books.findOne({
         where: {
           
-                    [Op.like]: `%${bookName}%` // partial search
+             bookName
                 
         }
       });
