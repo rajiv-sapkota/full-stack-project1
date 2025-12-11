@@ -1,34 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import AboutUsPage from './pages/AboutUsPage'
+import CreateBookPage from './pages/CreateBookPage'
+import SingleBookPage from './pages/SingleBookPage'
+import EditBookPage from './pages/EditBookPage'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/about-us' element={<AboutUsPage/>}/>
+        <Route path='/create-book' element={<CreateBookPage/>}/>
+        <Route path='/single-book' element={<SingleBookPage/>}/>
+        <Route path='/edit-book' element={<EditBookPage />} />
+        <Route path='*' element={<h1>Page not found</h1>} />
+        {/* Add more routes as needed */}
+
+        
+        
+      </Routes>
+    </BrowserRouter>
+ 
   )
 }
 
