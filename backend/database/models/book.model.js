@@ -17,6 +17,10 @@ const bookModel = (sequelize, DataTypes) => {
             allowNull: false
         },
 
+        bookDescription: {
+            type:DataTypes.STRING
+        }
+
     })
     return Book
 }

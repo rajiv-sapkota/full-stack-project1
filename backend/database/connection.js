@@ -28,7 +28,7 @@ db.books = require('./models/book.model')(sequelize, DataTypes)
 db.users = require('./models/user.model')(sequelize, DataTypes)
 
 //migrate the models with database
-sequelize.sync({alter:false}).then(() => {
+sequelize.sync({alter:true}).then(() => {
   console.log("database and tables synced !!!")
 })
 

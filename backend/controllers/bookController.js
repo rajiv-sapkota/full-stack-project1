@@ -19,13 +19,14 @@ exports.fetchAllBooks = async (req, res) => {
 
 
 exports.addBook = async (req, res) => {
-    const { bookName, bookPrice, bookAuthor, bookGenre } = req.body;
+    const { bookName, bookPrice, bookAuthor, bookGenre,bookDescription } = req.body;
 
     await db.books.create({
         bookName,
         bookPrice,
         bookAuthor,
-        bookGenre
+        bookGenre,
+        bookDescription
     })
 
     res.status(201).json({
