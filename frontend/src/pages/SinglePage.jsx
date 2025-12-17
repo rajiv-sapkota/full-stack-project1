@@ -28,7 +28,15 @@ function SinglePage() {
    await axios.delete("http://localhost:3000/api/books/" + id)
    window.alert("book deleted")
    navigate("/")
- };
+  };
+
+  const editBook = async () => {
+    console.log("in edit book")
+    await axios.patch("http://localhost:3000/api/books/" + id)
+    navigate("/")
+  }
+  
+  
 	
 	return (
     <>
@@ -36,7 +44,9 @@ function SinglePage() {
       <SingleBook singleBook={singleBook} />
       <br></br>
 
-      <Button buttonName="Delete" onClick={deleteBook} />
+     <Button buttonName="Delete" onClick={deleteBook} />
+     <Button buttonName="Edit" onClick={editBook} />
+     
     </>
   );
 }

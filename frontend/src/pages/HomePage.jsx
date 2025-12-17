@@ -18,18 +18,15 @@ function HomePage() {
     setBooks(response.data.bookList)
   }
 
-  const deleteBook =async () => {
-   console.log("dleted")
-  }
+  // const deleteBook =async () => {
+  //  console.log("dleted")
+  // }
 
 
  
-
   useEffect(() => {
-    fetchBooks()
-   
-    
-  }, [])
+    fetchBooks();
+  }, []); 
   
 
 
